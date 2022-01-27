@@ -5,6 +5,7 @@ import org.apache.commons.collections.MapUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -81,6 +82,16 @@ public class ParamUtil {
             return false;
         }
         return in1.equals(in2);
+    }
+
+    /**
+     * 判断字符串中是否存在该字符
+     * @param str
+     * @param strList
+     * @return
+     */
+    public static boolean equals(String str, List<String> strList){
+        return strList.contains(str);
     }
 
 
