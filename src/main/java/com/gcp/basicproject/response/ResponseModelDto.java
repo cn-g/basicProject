@@ -1,6 +1,7 @@
 package com.gcp.basicproject.response;
 
-import com.example.blog.util.ParamUtil;
+
+import com.gcp.basicproject.util.ParamUtil;
 import com.google.common.collect.Maps;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

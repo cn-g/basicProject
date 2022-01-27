@@ -1,6 +1,7 @@
 package com.gcp.basicproject.util;
 
-import com.example.blog.response.CommonException;
+
+import com.gcp.basicproject.response.CommonException;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
