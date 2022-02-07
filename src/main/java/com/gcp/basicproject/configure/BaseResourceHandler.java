@@ -28,11 +28,6 @@ public class BaseResourceHandler {
 
     private static final Logger log = LoggerFactory.getLogger(BaseResourceHandler.class);
 
-    @Bean
-    public MethodValidationPostProcessor methodValidationPostProcessor() {
-        return new MethodValidationPostProcessor();
-    }
-
     private <T> ResponseEntity<T> buildResponse(T t, HttpServletRequest request) {
         return ParamUtil.notEmpty(request.getHeader("FEIGN_ACCESS")) ? new ResponseEntity(t, HttpStatus.INTERNAL_SERVER_ERROR) : ResponseEntity.ok(t);
     }
