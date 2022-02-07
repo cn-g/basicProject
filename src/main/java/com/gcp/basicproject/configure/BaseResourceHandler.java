@@ -6,9 +6,11 @@ import com.gcp.basicproject.util.ParamUtil;
 import com.gcp.basicproject.util.ToolsUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConversionException;
+import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -25,6 +27,11 @@ import java.io.IOException;
 public class BaseResourceHandler {
 
     private static final Logger log = LoggerFactory.getLogger(BaseResourceHandler.class);
+
+    @Bean
+    public MethodValidationPostProcessor methodValidationPostProcessor() {
+        return new MethodValidationPostProcessor();
+    }
 
     private <T> ResponseEntity<T> buildResponse(T t, HttpServletRequest request) {
         return ParamUtil.notEmpty(request.getHeader("FEIGN_ACCESS")) ? new ResponseEntity(t, HttpStatus.INTERNAL_SERVER_ERROR) : ResponseEntity.ok(t);
