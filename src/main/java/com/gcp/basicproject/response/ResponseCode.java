@@ -5,11 +5,11 @@ package com.gcp.basicproject.response;
  */
 public enum ResponseCode {
 
-    OK(1, "OK", "OK"),
-    UnkownException(20002, "服务器撸猫去了~~", "Unknow Exception"),
-    CommonException(20004, "业务异常", "Common Exception"),
-    EMPTY(0, "查询结果为空", "NO RESULT"),
-    NoAuthor(4, "用户未登录，无法访问受保护资源", "Sorry,you are not login,please login"),
+    OK(200, "OK", "OK"),
+    UnkownException(500, "服务器撸猫去了~~", "Unknow Exception"),
+    CommonException(503, "业务异常", "Common Exception"),
+    EMPTY(204, "查询结果为空", "NO RESULT"),
+    NoAuthor(401, "用户未登录，无法访问受保护资源", "Sorry,you are not login,please login"),
     NOPOWER(403,"权限不足","No Power"),
     LOGINEXCEPTION(402,"登录失败","LOGIN ERROR");
 
