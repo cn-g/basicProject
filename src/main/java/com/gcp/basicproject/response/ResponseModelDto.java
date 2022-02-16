@@ -16,7 +16,7 @@ import java.util.Map;
 public class ResponseModelDto<T> implements Serializable {
 
     private static final long serialVersionUID = 4525431233220956770L;
-    @ApiModelProperty("错误码,值为1(默认)时表示没有错误,0表示查询结果为空或存在业务异常")
+    @ApiModelProperty("状态码,值为200(默认)时表示没有错误,204表示查询结果为空")
     private int errorCode;
     @ApiModelProperty("提示信息")
     private String message;
