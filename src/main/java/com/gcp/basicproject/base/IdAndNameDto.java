@@ -13,14 +13,18 @@ import javax.validation.constraints.NotBlank;
  * @author Admin
  */
 @Data
-@ApiModel("id入参类")
+@ApiModel("id和name")
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @NoArgsConstructor
-public class IdRequestDto {
+public class IdAndNameDto {
 
     @ApiModelProperty(value = "id")
     @NotBlank(message = "id不能为空")
     private String id;
+
+    @ApiModelProperty(value = "name")
+    @NotBlank(message = "name不能为空")
+    private String name;
 
 }

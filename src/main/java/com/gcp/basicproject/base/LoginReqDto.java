@@ -3,6 +3,9 @@ package com.gcp.basicproject.base;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
 
@@ -11,6 +14,9 @@ import javax.validation.constraints.NotBlank;
  */
 @Data
 @ApiModel(value = "登录入参")
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@NoArgsConstructor
 public class LoginReqDto {
 
     @ApiModelProperty(value = "账号")

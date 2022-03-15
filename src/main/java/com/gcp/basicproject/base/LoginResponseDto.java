@@ -2,6 +2,9 @@ package com.gcp.basicproject.base;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -11,6 +14,9 @@ import java.time.ZoneOffset;
  * @author Admin
  */
 @ApiModel(value = "登录出参")
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@NoArgsConstructor
 public class LoginResponseDto {
 
     @ApiModelProperty(value = "token")
