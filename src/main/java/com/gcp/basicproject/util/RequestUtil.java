@@ -16,6 +16,8 @@ public class RequestUtil {
 
     public static final String TOKEN = "token";
 
+    public static final String ROLE = "role_id";
+
     /**
      * 获取token
      * @return
@@ -41,6 +43,15 @@ public class RequestUtil {
     public static String getUserId(){
         String userId = getToken();
         return userId==null?null:userId.split("\\|")[0];
+    }
+
+    /**
+     * 获取角色id
+     * @return
+     */
+    public static String getRole(){
+        HttpServletRequest request = getRequestWithNull();
+        return request == null ? null : request.getHeader(ROLE);
     }
 
 }
