@@ -28,8 +28,8 @@ public class LoginResponseDto {
     @ApiModelProperty(value = "用户id")
     private String id;
 
-    @ApiModelProperty(value = "房间号")
-    private String roomNo;
+    @ApiModelProperty(value = "角色id")
+    private String roleId;
 
     @ApiModelProperty(value = "是否管理员")
     private Boolean admin;
@@ -70,11 +70,11 @@ public class LoginResponseDto {
         this.admin = admin;
     }
 
-    public String getRoomNo() {
-        return roomNo;
+    public String getRoleId() {
+        return roleId;
     }
 
-    public void setRoomNo(String roomNo) {
-        this.roomNo = roomNo;
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
     }
 }
