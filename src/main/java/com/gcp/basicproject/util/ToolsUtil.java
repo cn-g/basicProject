@@ -128,7 +128,7 @@ public class ToolsUtil {
      * @param url
      * @return
      */
-    public String getUrl(String url){
+    public static String getUrl(String url){
         String[] urls = url.split("\\/");
         String params = new String();
         for(int i = 3;i< urls.length;i++){
