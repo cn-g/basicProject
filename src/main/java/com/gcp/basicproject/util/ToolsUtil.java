@@ -123,4 +123,18 @@ public class ToolsUtil {
         return md5.getMD5ofStr(password);
     }
 
+    /**
+     * 截取请求路径中域名后面的参数
+     * @param url
+     * @return
+     */
+    public String getUrl(String url){
+        String[] urls = url.split("\\/");
+        String params = new String();
+        for(int i = 3;i< urls.length;i++){
+            params = params+"/"+urls[i];
+        }
+        return params;
+    }
+
 }
