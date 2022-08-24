@@ -592,4 +592,13 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 模糊查询key
+     * @param pattern
+     * @return
+     */
+    public Set<String> getCacheBatch(String pattern){
+        return this.redisTemplate.keys(pattern);
+    }
+
 }
