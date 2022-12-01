@@ -11,7 +11,7 @@ public enum ResponseCode {
     EMPTY(204, "查询结果为空", "NO RESULT"),
     NoAuthor(401, "用户未登录，无法访问受保护资源", "Sorry,you are not login,please login"),
     NOPOWER(403,"权限不足","No Power"),
-    LOGINEXCEPTION(402,"登录失败","LOGIN ERROR");
+    LOGINEXCEPTION(402,"认证失败","LOGIN ERROR");
 
     private int errorCode;
 
