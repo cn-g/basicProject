@@ -1,5 +1,6 @@
 package com.gcp.basicproject.util;
 
+import cn.hutool.http.HttpUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.gcp.basicproject.response.CommonException;
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -135,6 +137,27 @@ public class ToolsUtil {
             params = params+"/"+urls[i];
         }
         return params;
+    }
+
+    /**
+     * 下载网络视频
+     * @param fileUrl 网络视频地址
+     * @param fileTitle 视频名称，示例：全能囧爸
+     * @param path 本地保存地址 示例：D:/视频/
+     */
+    public static void downloadMovie(String fileUrl,String fileTitle,String path){
+        log.info("开始下载:{}--{}",fileTitle, LocalDateTime.now());
+        if (fileUrl != null) {
+            //下载时文件名称
+            String fileName = fileTitle+".mp4";
+            try {
+                path = path+fileName;
+                HttpUtil.downloadFile(fileUrl, path);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        log.info("{}下载完成--{}",fileTitle, LocalDateTime.now());
     }
 
 }
